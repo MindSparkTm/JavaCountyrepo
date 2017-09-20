@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.File;
 
 import org.apache.commons.collections4.map.MultiValueMap;
 import org.springframework.stereotype.Component;
@@ -13,7 +14,7 @@ import com.example.models.*;
 @Component
 public class DataService {
 	public  Data getdetails(){
-		 String csvFile = "C:/Users/Brian/eclipse-workspace/RESTAPI-1/src/main/java/com/example/service/records.csv";
+		String csvFile = new File("src/main/java/com/example/service/records.csv").getAbsolutePath();
 
 	     MultiValueMap<String,String> map = new MultiValueMap<String,String>();
 	     MultiValueMap<String,String> map2 = new MultiValueMap<String,String>();
