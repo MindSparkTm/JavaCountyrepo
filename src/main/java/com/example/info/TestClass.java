@@ -34,6 +34,8 @@ public class TestClass {
    
     @RequestMapping(value = "/county", method = RequestMethod.GET, produces = "application/json")
 	public String getallinfo(@RequestParam("data") String countyname) {
+	  countyname = countyname.substring(0, 1).toUpperCase() + countyname.substring(1);
+
 		Data d = new Data();
 		d = dt.getdetails();
 		counties = d.getCounties();
